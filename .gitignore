@@ -1,1 +1,3 @@
 config/deploy.rb
+config/config.rb
+config/nginx.conf
