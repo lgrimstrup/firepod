@@ -1,0 +1,2 @@
+require './beetilpod'
+run BeetilPod
