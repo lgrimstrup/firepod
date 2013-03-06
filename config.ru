@@ -1,2 +1,2 @@
-require './firepod'
-run Firepod
+require './firepod_server'
+run FirepodServer
