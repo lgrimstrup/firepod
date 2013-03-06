@@ -19,14 +19,14 @@ class Firepod < Sinatra::Base
   post '/' do
     case params['type']
       when 'hook.verify'
-        # Validate the webhook
+        logger.info "Validating Webhook"
         Podio::Hook.validate(params['hook_id'], params['code'])
-
       when 'item.create', 'item.update'
         Podio.client.authenticate_with_credentials(PODIO[:username], PODIO[:password])
-
-        logger.info params.inspect
-        params.inspect
+        item = Podio::Item.find(params['item_id'])
+  
+        logger.info params.inspect        
+        logger.info item.inspect
       when 'item.delete'
         # Do something. item_id is available in params['item_id']
     end
