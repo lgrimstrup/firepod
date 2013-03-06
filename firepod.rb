@@ -1,4 +1,4 @@
-require 'config/config'
+require_relative 'config/config'
 require 'sinatra'
 require 'podio'
 
